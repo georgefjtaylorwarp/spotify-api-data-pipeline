@@ -1,4 +1,5 @@
 import requests
+import json
 from spotify_auth import spotify_auth
 
 def parse_spotify_metadata(json_data):
@@ -26,6 +27,7 @@ def fetch_spotify_track_metadata(q):
     }
 
     r = requests.get(url=url, headers=headers)
+    # print(json.dumps(r.json()['tracks']['items'][0]['artists'][0]['name'], indent=4))
     metadata = parse_spotify_metadata(r.json())
     
     return metadata

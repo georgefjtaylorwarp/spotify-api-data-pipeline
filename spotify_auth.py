@@ -1,7 +1,7 @@
 import os
+from dotenv import load_dotenv
 import base64
 import requests
-from dotenv import load_dotenv
 
 def spotify_auth():
     # load environment variables from .env file
