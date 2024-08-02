@@ -13,4 +13,4 @@ def upload_blob(source_json, bucket_name, destination_blob_name):
 
     blob.upload_from_string(source_json)
 
-    print(f"File {source_json} uploaded to {destination_blob_name}.")
+    print(f"File {destination_blob_name} uploaded to {bucket_name}.")

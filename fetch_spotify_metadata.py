@@ -27,7 +27,9 @@ def fetch_spotify_track_metadata(q):
     }
 
     r = requests.get(url=url, headers=headers)
-    # print(json.dumps(r.json()['tracks']['items'][0]['artists'][0]['name'], indent=4))
-    metadata = parse_spotify_metadata(r.json())
-    
+    track_reponse = r.json()
+
+    metadata = parse_spotify_metadata(track_reponse)
+
+    print(json.dumps(metadata, indent=4))
     return metadata
